@@ -13,6 +13,13 @@ class Questions {
     let questionAndAnswer1: QuestionAndAnswers
     let questionAndAnswer2: QuestionAndAnswers
     let questionAndAnswer3: QuestionAndAnswers
+    let questionAndAnswer4: QuestionAndAnswers
+    let questionAndAnswer5: QuestionAndAnswers
+    let questionAndAnswer6: QuestionAndAnswers
+    let questionAndAnswer7: QuestionAndAnswers
+    let questionAndAnswer8: QuestionAndAnswers
+    let questionAndAnswer9: QuestionAndAnswers
+    let questionAndAnswer10: QuestionAndAnswers
     let questions: [QuestionAndAnswers]
     
     init() {
@@ -34,6 +41,49 @@ class Questions {
                                                      option3: "1945",
                                                      option4: "1954",
                                                      answer: 3)
+        self.questionAndAnswer4 = QuestionAndAnswers(question: "The Titanic departed from the United Kingdom, where was it supposed to arrive?",
+                                                     option1: "Paris",
+                                                     option2: "Washington D.C.",
+                                                     option3: "New York City",
+                                                     option4: "Boston",
+                                                     answer: 3)
+        self.questionAndAnswer5 = QuestionAndAnswers(question: "Which nation produces the most oil?",
+                                                     option1: "Iran",
+                                                     option2: "Iraq",
+                                                     option3: "Brazil",
+                                                     option4: "Canada",
+                                                     answer: 4)
+        self.questionAndAnswer6 = QuestionAndAnswers(question: "Which country has most recently won consecutive World Cups in Soccer?",
+                                                     option1: "Italy",
+                                                     option2: "Brazil",
+                                                     option3: "Argetina",
+                                                     option4: "Spain",
+                                                     answer: 2)
+        self.questionAndAnswer7 = QuestionAndAnswers(question: "Which of the following rivers is longest?",
+                                                     option1: "Yangtze",
+                                                     option2: "Mississippi",
+                                                     option3: "Congo",
+                                                     option4: "Mekong",
+                                                     answer: 2)
+        self.questionAndAnswer8 = QuestionAndAnswers(question: "Which city is the oldest?",
+                                                     option1: "Mexico City",
+                                                     option2: "Cape Town",
+                                                     option3: "San Juan",
+                                                     option4: "Sydney",
+                                                     answer: 1)
+        self.questionAndAnswer9 = QuestionAndAnswers(question: "Which country was the first to allow women to vote in national elections?",
+                                                     option1: "Poland",
+                                                     option2: "United States",
+                                                     option3: "Sweden",
+                                                     option4: "Senegal",
+                                                     answer: 1)
+        self.questionAndAnswer10 = QuestionAndAnswers(question: "Which of these countries won the most medals in the 2012 Summer Games?",
+                                                      option1: "France",
+                                                      option2: "Germany",
+                                                      option3: "Japan",
+                                                      option4: "Great Britian",
+                                                      answer: 4)
+        
         self.questions = [questionAndAnswer1, questionAndAnswer2, questionAndAnswer3]
         
     }
@@ -44,41 +94,8 @@ class Questions {
     }
 }
 
- /*   func isCorrect(givenAnswer: Int) -> Bool {
-        if givenAnswer == self.answer {
-            return true
-        } else {
-            return false
-        }
-    }*/
-    
 
 
 
-/*
-
-let questionAndAnswer4 = QuestionAndAnswers(question: <#T##String#>, option1: <#T##String#>, option2: <#T##String#>, option3: <#T##String#>, option4: <#T##String#>, answer: <#T##Int#>)
-let questionAndAnswer5 = QuestionAndAnswers(question: <#T##String#>, option1: <#T##String#>, option2: <#T##String#>, option3: <#T##String#>, option4: <#T##String#>, answer: <#T##Int#>)
-let questionAndAnswer6 = QuestionAndAnswers(question: <#T##String#>, option1: <#T##String#>, option2: <#T##String#>, option3: <#T##String#>, option4: <#T##String#>, answer: <#T##Int#>)
-let questionAndAnswer7 = QuestionAndAnswers(question: <#T##String#>, option1: <#T##String#>, option2: <#T##String#>, option3: <#T##String#>, option4: <#T##String#>, answer: <#T##Int#>)
-let questionAndAnswer8 = QuestionAndAnswers(question: <#T##String#>, option1: <#T##String#>, option2: <#T##String#>, option3: <#T##String#>, option4: <#T##String#>, answer: <#T##Int#>)
-let questionAndAnswer9 = QuestionAndAnswers(question: <#T##String#>, option1: <#T##String#>, option2: <#T##String#>, option3: <#T##String#>, option4: <#T##String#>, answer: <#T##Int#>)
-let questionAndAnswer10 = QuestionAndAnswers(question: <#T##String#>, option1: <#T##String#>, option2: <#T##String#>, option3: <#T##String#>, option4: <#T##String#>, answer: <#T##Int#>)
 
 
-Question	Option 1	Option 2	Option 3	Option 4	Correct Answer
-
-
- 
-The Titanic departed from the United Kingdom, where was it supposed to arrive?	Paris	Washington D.C.	New York City	Boston	3
-Which nation produces the most oil?	Iran	Iraq	Brazil	Canada	4
-Which country has most recently won consecutive World Cups in Soccer?	Italy	Brazil	Argetina	Spain	2
-Which of the following rivers is longest?	Yangtze	Mississippi	Congo	Mekong	2
-Which city is the oldest?	Mexico City	Cape Town	San Juan	Sydney	1
-Which country was the first to allow women to vote in national elections?	Poland	United States	Sweden	Senegal	1
-Which of these countries won the most medals in the 2012 Summer Games?	France	Germany	Japan	Great Britian	4
- 
- 
- 
- 
- */

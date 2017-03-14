@@ -23,12 +23,6 @@ class ViewController: UIViewController {
     @IBOutlet weak var option3Button: UIButton!
     @IBOutlet weak var option4Button: UIButton!
     @IBOutlet weak var playAgainButton: UIButton!
-   /* @IBOutlet weak var questionField: UILabel!
-    @IBOutlet weak var option1Button: UIButton!
-    @IBOutlet weak var option2Button: UIButton!
-    @IBOutlet weak var option3Button: UIButton!
-    @IBOutlet weak var option4Button: UIButton!
-    @IBOutlet weak var playAgainButton: UIButton!*/
     
     override func viewDidLoad() {
         super.viewDidLoad()
