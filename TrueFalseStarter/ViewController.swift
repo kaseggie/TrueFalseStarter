@@ -7,7 +7,6 @@
 //
 
 import UIKit
-import GameKit
 import AudioToolbox
 
 class ViewController: UIViewController {
@@ -15,18 +14,8 @@ class ViewController: UIViewController {
     let questionsPerRound = 4
     var questionsAsked = 0
     var correctQuestions = 0
-    var indexOfSelectedQuestion: Int = 0
-    let questionProvider = QuestionProvider()
-    
     var gameSound: SystemSoundID = 0
-    
-    
-    let trivia: [[String : String]] = [
-        ["Question": "Only female koalas can whistle", "Answer": "False"],
-        ["Question": "Blue whales are technically whales", "Answer": "True"],
-        ["Question": "Camels are cannibalistic", "Answer": "False"],
-        ["Question": "All ducks are birds", "Answer": "True"]
-    ]
+    var currentQuestionAndAnswers: QuestionAndAnswers = Questions().randomQuestion()
     
     @IBOutlet weak var questionField: UILabel!
     @IBOutlet weak var option1Button: UIButton!
@@ -34,12 +23,16 @@ class ViewController: UIViewController {
     @IBOutlet weak var option3Button: UIButton!
     @IBOutlet weak var option4Button: UIButton!
     @IBOutlet weak var playAgainButton: UIButton!
+   /* @IBOutlet weak var questionField: UILabel!
+    @IBOutlet weak var option1Button: UIButton!
+    @IBOutlet weak var option2Button: UIButton!
+    @IBOutlet weak var option3Button: UIButton!
+    @IBOutlet weak var option4Button: UIButton!
+    @IBOutlet weak var playAgainButton: UIButton!*/
     
-
     override func viewDidLoad() {
         super.viewDidLoad()
         loadGameStartSound()
-        // Start game
         playGameStartSound()
         displayQuestion()
     }
@@ -50,10 +43,11 @@ class ViewController: UIViewController {
     }
     
     func displayQuestion() {
-        let currentQuestion = questionProvider.randomQuestion()
-        questionField.text = currentQuestion.question
-        option1Button.text = currentQuestion.option1
-        
+        questionField.text = currentQuestionAndAnswers.question
+        option1Button.setTitle(currentQuestionAndAnswers.option1, for: UIControlState.normal)
+        option2Button.setTitle(currentQuestionAndAnswers.option2, for: UIControlState.normal)
+        option3Button.setTitle(currentQuestionAndAnswers.option3, for: UIControlState.normal)
+        option4Button.setTitle(currentQuestionAndAnswers.option4, for: UIControlState.normal)
         playAgainButton.isHidden = true
     }
     
@@ -75,17 +69,16 @@ class ViewController: UIViewController {
         // Increment the questions asked counter
         questionsAsked += 1
         
-        let selectedQuestionDict = trivia[indexOfSelectedQuestion]
-        let correctAnswer = selectedQuestionDict["Answer"]
+        let correctAnswer = currentQuestionAndAnswers.answer
         
-        if (sender === trueButton &&  correctAnswer == "True") || (sender === falseButton && correctAnswer == "False") {
+        if (sender === option1Button && correctAnswer == 1) || (sender === option2Button && correctAnswer == 2) || (sender === option3Button && correctAnswer == 3) || (sender === option4Button && correctAnswer == 4) {
             correctQuestions += 1
             questionField.text = "Correct!"
         } else {
             questionField.text = "Sorry, wrong answer!"
         }
         
-        loadNextRoundWithDelay(seconds: 2)
+        loadNextRoundWithDelay(seconds: 1)
     }
     
     func nextRound() {
@@ -94,6 +87,7 @@ class ViewController: UIViewController {
             displayScore()
         } else {
             // Continue game
+            currentQuestionAndAnswers = Questions().randomQuestion()
             displayQuestion()
         }
     }

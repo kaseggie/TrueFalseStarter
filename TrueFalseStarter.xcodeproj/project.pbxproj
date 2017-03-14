@@ -7,7 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		8ECC32331E76FDE8009B3370 /* QuestionProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8ECC32321E76FDE8009B3370 /* QuestionProvider.swift */; };
+		8ECC32331E76FDE8009B3370 /* Questions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8ECC32321E76FDE8009B3370 /* Questions.swift */; };
 		8ECC32351E7700BD009B3370 /* QuestionAndAnswers.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8ECC32341E7700BD009B3370 /* QuestionAndAnswers.swift */; };
 		97093D3C1C913506001275BC /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 97093D3B1C913506001275BC /* AppDelegate.swift */; };
 		97093D3E1C913506001275BC /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 97093D3D1C913506001275BC /* ViewController.swift */; };
@@ -18,7 +18,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		8ECC32321E76FDE8009B3370 /* QuestionProvider.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = QuestionProvider.swift; sourceTree = "<group>"; };
+		8ECC32321E76FDE8009B3370 /* Questions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Questions.swift; sourceTree = "<group>"; };
 		8ECC32341E7700BD009B3370 /* QuestionAndAnswers.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = QuestionAndAnswers.swift; sourceTree = "<group>"; };
 		97093D381C913506001275BC /* TrueFalseStarter.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TrueFalseStarter.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		97093D3B1C913506001275BC /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -63,7 +63,7 @@
 				97093D3B1C913506001275BC /* AppDelegate.swift */,
 				97093D3D1C913506001275BC /* ViewController.swift */,
 				97093D3F1C913506001275BC /* Main.storyboard */,
-				8ECC32321E76FDE8009B3370 /* QuestionProvider.swift */,
+				8ECC32321E76FDE8009B3370 /* Questions.swift */,
 				8ECC32341E7700BD009B3370 /* QuestionAndAnswers.swift */,
 				97093D421C913506001275BC /* Assets.xcassets */,
 				97093D441C913506001275BC /* LaunchScreen.storyboard */,
@@ -149,7 +149,7 @@
 			files = (
 				97093D3E1C913506001275BC /* ViewController.swift in Sources */,
 				8ECC32351E7700BD009B3370 /* QuestionAndAnswers.swift in Sources */,
-				8ECC32331E76FDE8009B3370 /* QuestionProvider.swift in Sources */,
+				8ECC32331E76FDE8009B3370 /* Questions.swift in Sources */,
 				97093D3C1C913506001275BC /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

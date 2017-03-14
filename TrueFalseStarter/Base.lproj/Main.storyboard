@@ -118,12 +118,12 @@
                     </view>
                     <simulatedStatusBarMetrics key="simulatedStatusBarMetrics" statusBarStyle="lightContent"/>
                     <connections>
-                        <outlet property="falseButton" destination="AS4-HX-g9f" id="Xfj-Ws-1ey"/>
-                        <outlet property="option3Button" destination="uH7-hL-sUd" id="jky-VJ-dOP"/>
-                        <outlet property="option4Button" destination="92S-kJ-r2w" id="Dro-MY-l7R"/>
-                        <outlet property="playAgainButton" destination="K17-uy-MvB" id="0Bx-Cm-ye0"/>
-                        <outlet property="questionField" destination="I3V-ih-1Ky" id="7UI-o2-ATi"/>
-                        <outlet property="trueButton" destination="J1V-MS-ECi" id="iZW-hy-ROl"/>
+                        <outlet property="option1Button" destination="J1V-MS-ECi" id="qGr-ck-UpA"/>
+                        <outlet property="option2Button" destination="AS4-HX-g9f" id="247-5q-s0G"/>
+                        <outlet property="option3Button" destination="uH7-hL-sUd" id="I57-ZH-9bA"/>
+                        <outlet property="option4Button" destination="92S-kJ-r2w" id="K7D-76-VD8"/>
+                        <outlet property="playAgainButton" destination="K17-uy-MvB" id="AGg-Sw-Gnu"/>
+                        <outlet property="questionField" destination="I3V-ih-1Ky" id="xxa-Tm-L0Q"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
