@@ -21,6 +21,7 @@ class Questions {
     let questionAndAnswer9: QuestionAndAnswers
     let questionAndAnswer10: QuestionAndAnswers
     let questions: [QuestionAndAnswers]
+    var availableQuestions: [QuestionAndAnswers]
     
     init() {
         self.questionAndAnswer1 = QuestionAndAnswers(question: "This was the only US President to serve more than two consecutive terms.",
@@ -85,22 +86,19 @@ class Questions {
                                                       answer: 4)
         
         self.questions = [questionAndAnswer1, questionAndAnswer2, questionAndAnswer3, questionAndAnswer4, questionAndAnswer5, questionAndAnswer6, questionAndAnswer7, questionAndAnswer8, questionAndAnswer9, questionAndAnswer10]
-        
+        self.availableQuestions = self.questions
     }
     
-    func randomQuestion(availableQuestions: [Int]) -> QuestionAndAnswers {
-        var isQuestionUsed: Bool = false
-        var randomNumber: Int
-        repeat {
-            randomNumber = GKRandomSource.sharedRandom().nextInt(upperBound: questions.count)
-            for number in usedQuestions {
-           //     if usedQuestions.number == randomNumber {
-                    isQuestionUsed = true
-                    break
-                }
-            }
-        } while isQuestionUsed == true
-        return questions[randomNumber]
+    func randomQuestion() -> QuestionAndAnswers {
+        let returnQuestionAndAnswers: QuestionAndAnswers
+        let randomNumber = GKRandomSource.sharedRandom().nextInt(upperBound: availableQuestions.count)
+        returnQuestionAndAnswers = availableQuestions[randomNumber]
+        availableQuestions.remove(at: randomNumber)
+        return returnQuestionAndAnswers
+    }
+    
+    func resetQuestions() {
+        self.availableQuestions = self.questions
     }
 }
 

@@ -11,12 +11,12 @@ import AudioToolbox
 
 class ViewController: UIViewController {
     
-    let questionsPerRound = 4
+    let questionsPerRound = 10 //This can not be set to more than 10
     var questionsAsked = 0
     var correctQuestions = 0
     var gameSound: SystemSoundID = 0
-    var usedQuestions: [Int] = []
-    var currentQuestionAndAnswers: QuestionAndAnswers = Questions().randomQuestion(usedQuestions: [])
+    let questions: Questions = Questions()
+    var currentQuestionAndAnswers: QuestionAndAnswers = QuestionAndAnswers(question: "", option1: "", option2: "", option3: "", option4: "", answer: 0)
     
     @IBOutlet weak var questionField: UILabel!
     @IBOutlet weak var option1Button: UIButton!
@@ -38,6 +38,7 @@ class ViewController: UIViewController {
     }
     
     func displayQuestion() {
+        currentQuestionAndAnswers = questions.randomQuestion()
         questionField.text = currentQuestionAndAnswers.question
         option1Button.setTitle(currentQuestionAndAnswers.option1, for: UIControlState.normal)
         option2Button.setTitle(currentQuestionAndAnswers.option2, for: UIControlState.normal)
@@ -82,8 +83,6 @@ class ViewController: UIViewController {
             displayScore()
         } else {
             // Continue game
-            usedQuestions = [1, 2, 3, 4, 5, 6, 7, 8, 9]
-            currentQuestionAndAnswers = Questions().randomQuestion(usedQuestions: usedQuestions)
             displayQuestion()
         }
     }
@@ -97,7 +96,7 @@ class ViewController: UIViewController {
         
         questionsAsked = 0
         correctQuestions = 0
-        usedQuestions = []
+        questions.resetQuestions()
         nextRound()
     }
     
