@@ -84,18 +84,25 @@ class Questions {
                                                       option4: "Great Britian",
                                                       answer: 4)
         
-        self.questions = [questionAndAnswer1, questionAndAnswer2, questionAndAnswer3]
+        self.questions = [questionAndAnswer1, questionAndAnswer2, questionAndAnswer3, questionAndAnswer4, questionAndAnswer5, questionAndAnswer6, questionAndAnswer7, questionAndAnswer8, questionAndAnswer9, questionAndAnswer10]
         
     }
     
-    func randomQuestion() -> QuestionAndAnswers {
-        let randomNumber = GKRandomSource.sharedRandom().nextInt(upperBound: questions.count)
+    func randomQuestion(availableQuestions: [Int]) -> QuestionAndAnswers {
+        var isQuestionUsed: Bool = false
+        var randomNumber: Int
+        repeat {
+            randomNumber = GKRandomSource.sharedRandom().nextInt(upperBound: questions.count)
+            for number in usedQuestions {
+           //     if usedQuestions.number == randomNumber {
+                    isQuestionUsed = true
+                    break
+                }
+            }
+        } while isQuestionUsed == true
         return questions[randomNumber]
     }
 }
-
-
-
 
 
 

@@ -15,7 +15,8 @@ class ViewController: UIViewController {
     var questionsAsked = 0
     var correctQuestions = 0
     var gameSound: SystemSoundID = 0
-    var currentQuestionAndAnswers: QuestionAndAnswers = Questions().randomQuestion()
+    var usedQuestions: [Int] = []
+    var currentQuestionAndAnswers: QuestionAndAnswers = Questions().randomQuestion(usedQuestions: [])
     
     @IBOutlet weak var questionField: UILabel!
     @IBOutlet weak var option1Button: UIButton!
@@ -81,7 +82,8 @@ class ViewController: UIViewController {
             displayScore()
         } else {
             // Continue game
-            currentQuestionAndAnswers = Questions().randomQuestion()
+            usedQuestions = [1, 2, 3, 4, 5, 6, 7, 8, 9]
+            currentQuestionAndAnswers = Questions().randomQuestion(usedQuestions: usedQuestions)
             displayQuestion()
         }
     }
@@ -95,6 +97,7 @@ class ViewController: UIViewController {
         
         questionsAsked = 0
         correctQuestions = 0
+        usedQuestions = []
         nextRound()
     }
     
